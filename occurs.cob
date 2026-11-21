@@ -1,0 +1,18 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HELLO.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 WS-MARKS.
+           05 WS-MARK PIC 999 OCCURS 5 TIMES.
+       01 WS-MARK-OUT PIC ZZ9.
+       01 WS-I PIC 9.
+
+       PROCEDURE DIVISION.
+           PERFORM VARYING WS-I FROM 1 BY 1 UNTIL WS-I > 5
+              DISPLAY "ENTER MARK: " WS-I
+              ACCEPT WS-MARK(WS-I)
+              MOVE WS-MARK(WS-I) TO WS-MARK-OUT
+              DISPLAY "ENTERED MARK: " WS-MARK-OUT 
+           END-PERFORM.
+           STOP RUN.
